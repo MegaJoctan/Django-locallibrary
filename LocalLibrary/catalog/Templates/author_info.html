@@ -1,0 +1,19 @@
+{% extends "base_template.html" %}
+    {% block content %}
+          <h2>Author: {{ author.first_name }} {{ author.last_name }}</h2>
+            <div class="author_dates">
+                  <p>Born in {{author.date_of_birth}}</p>
+                {% if author.date_of_death %}
+                  <p>Died in {{ author.date_of_death }}</p>
+                {% endif %}
+            </div>
+            <div class="books" style="margin-right: 50px;">
+                <h2>Books</h2>
+                {% for copy in author.book_set.all %}
+                    <a href="{{copy.get_absolute_url}}">{{copy.title}}</a>
+                    <div class="book_details">
+                        <p>{{ copy.summary }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+    {% endblock %}

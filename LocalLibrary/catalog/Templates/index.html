@@ -1,0 +1,18 @@
+{% extends 'base_template.html' %}
+{% block content %}
+
+   <h1>LocalLibrary Home</h1>
+   <p>Welcome to LocalLibrary, This Website has been developed by <em> Omega Joctan</em></p>
+
+   <h1>Library Records</h1>
+   <p>Library has the following record counts</p>
+        <div style="margin-left: 15px;">
+            <li><b>Books: </b>{{ num_books }}</li>
+            <li><b>Authors: </b>{{ num_authors }}</li>
+            <li><b>Books Instances: </b>{{ num_instance }}</li>
+            <li><b>Books Available: </b>{{ num_instance_available }}</li>
+            <li><b>Genres Total: </b>{{ genres_total }}</li>
+        </div>
+    
+        <p>You have visited this page {{num_visits }} time{{num_visits|pluralize}}.</p>
+{% endblock %}

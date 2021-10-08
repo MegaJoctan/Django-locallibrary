@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+*{
+    list-style: none;
+    text-decoration: none;
+    font-family: Ubuntu;
+}
+a {
+    text-decoration: none;
+    color: rgb(78, 169, 221);
+}
+
+.sidebar {
+    width: 225px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+    background-color: dodgerblue; 
+    a {
+        color: white;
+        display: table-row;
+        padding: 10px 0;
+        font-weight: bold;
+    }
+}
+.center-div{
+    position: absolute;
+    margin-left: 230px;
+}
+.pagination {
+    margin-left: 300px;
+    position: absolute;
+    margin-top: 170px;
+}
+
+.author_dates, .book_details {
+    margin-left: 30px;
+}
+
+.text-success {
+    color: dodgerblue;
+}
+.text-danger {
+    color: rgb(255, 192, 44);
+}
+.text-warning {
+    color: rgb(211, 46, 46);
+}
+.text-muted {
+    color: white;
+}
+.user_status {
+    position: absolute;
+    padding: 20px 0;
+    left: 40px;
+}
+.hr {
+    position: absolute;
+    width: 70%;
+    margin: 0 15%;
+    background-color: white;
+    height: 1px;
+}
