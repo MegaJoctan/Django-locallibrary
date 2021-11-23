@@ -7,6 +7,7 @@
                   <p>Died in {{ author.date_of_death }}</p>
                 {% endif %}
             </div>
+            
             <div class="books" style="margin-right: 50px;">
                 <h2>Books</h2>
                 {% for copy in author.book_set.all %}
