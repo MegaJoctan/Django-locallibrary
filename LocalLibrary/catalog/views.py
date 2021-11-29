@@ -13,7 +13,9 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-# Create your views here.                                               
+import logging
+
+logger = logging.getLogger(__name__)
 
 def index(request):
     num_books = Book.objects.all().count()
@@ -102,3 +104,16 @@ class AuthorUpdate(UpdateView):
 class AuthorDelete(DeleteView):
     model = Author
     success_url =  reverse_lazy('authors_page')
+
+def page_not_foundview(request, exception, template_name='404.html'):
+    if exception:
+        logger.error(exception)
+        return render(request, template_name, status=404)
+
+def server_error_view(request,  template_name='500.html'): 
+        return render(request, template_name, status=500)
+
+def permission_denied_view(request, exception, template_name='403.html'):
+    if exception:
+        logger.error(exception)
+        return render(request, template_name, status=403)
