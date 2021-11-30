@@ -1,1 +1,1 @@
-web: gunicorn my-locallibrary-django.wsgi --log-file -
+web: gunicorn LocalLibrary.wsgi --log-file -
