@@ -1,1 +1,1 @@
-web: gunicorn LocalLibrary.LocalLibrary.wsgi --log-file -
+ web: gunicorn --pythonpath LocalLibrary LocalLibrary.wsgi
