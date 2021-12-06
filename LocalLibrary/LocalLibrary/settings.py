@@ -81,7 +81,6 @@ WSGI_APPLICATION = 'LocalLibrary.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -90,11 +89,11 @@ DATABASES = {
         'PASSWORD': 'Omg.Database@2021',
         'HOST':'127.0.0.1',
         'PORT': '5432',
-        'CONN_MAX_AGE': 500,
-    }
+    } 
 }
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

@@ -3,9 +3,4 @@ __pycache__/
 migrations/
 *.[oa]
 Tests/git
-/pgsql.sln
-/pgsql.sln.cache
-.pgsql
-migrations/
 Tests/
-.sqlite
