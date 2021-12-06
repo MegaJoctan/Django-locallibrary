@@ -81,16 +81,8 @@ WSGI_APPLICATION = 'LocalLibrary.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'LocalLibraryDB',
-        'USER': 'postgres',
-        'PASSWORD': 'Omg.Database@2021',
-        'HOST':'127.0.0.1',
-        'PORT': '5432',
-    } 
-}
+
+DATABASES = {}
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
